@@ -1,0 +1,42 @@
+/* A estrela se refere a todos os elementos da pagina (é o chamado reset)  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Na :root podemos declarar variáveis CSS */
+:root{
+    --vermelho:#E50914;
+    --preto:#141414;
+}
+
+/*E utilizamos as variáveis com a "função" var(nome_da_variavel)*/
+body{
+    background-color: var(--preto);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header .container{
+    margin-left: 1em;
+    margin-right: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo{
+    color: var(--vermelho);
+    font-family: 'Arial Black';
+    font-size: 40px;
+}
+
+header nav a{
+    text-decoration-line: none;
+    color: #AAA;
+    margin-right: 10px;
+    
+}
+header nav a:hover{
+    color: #fff;
+}
