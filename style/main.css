@@ -45,11 +45,44 @@ header nav a:hover{
 /* Main movie */
 
 .main_movie{
+    position: relative;
     font-size: 20px;
     min-height: 400px;
-    background-image: url('../img/bakemonogatari.jpeg');
+    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0)), url('../img/bakemonogatari.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    transition: opacity 1s;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1;
+}
+.main_movie::before{
+    content: "";
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.1)), url('../img/bakemonogatari.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+}
+.main_movie:hover::before{
+    opacity: 1;
 }
 
-
+.main_movie .main_movie_title{
+    font-size: 40px;
+}
+.main_movie .movie_description{
+    margin-bottom: 10px;
+}
+/* As características do CSS são herdadas para o primeiro Child do elemento que estamos estilizando */
