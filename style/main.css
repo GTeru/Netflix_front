@@ -6,13 +6,13 @@
     border-color: rgb(0,0,0,0);
 }
 
-/* Na :root podemos declarar variáveis CSS */
+/* Na :root podemos declarar variáveis CSS que são globais ao sistema */
 :root{
-    --red:#E50914;
-    --black:#141414;
+    --red:rgb(229, 9, 20);
+    --black:rgb(20, 20, 20);
 }
 
-/*E utilizamos as variáveis com a "função" var(nome_da_variavel)*/
+/*Para declarar as variáveis com a "função" var(nome_da_variavel)*/
 body{
     background-color: var(--black);
     font-family: 'Times New Roman', Times, serif;
@@ -37,7 +37,7 @@ header nav a{
     text-decoration-line: none;
     color: #AAA;
     margin-right: 10px;
-    
+
 }
 header nav a:hover{
     color: #fff;
@@ -46,6 +46,7 @@ header nav a:hover{
 /* Main movie */
 
 .main_movie{
+    font-family:Arial, Helvetica, sans-serif;
     position: relative;
     font-size: 20px;
     min-height: 400px;
@@ -57,7 +58,6 @@ header nav a:hover{
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
     z-index: 1;
 }
 
@@ -95,18 +95,46 @@ header nav a:hover{
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
 div .button_row{
    box-sizing: content-box;
 }
+
 .button_row button{
     border-radius: 1em;
     height: 40px;
-    width: 150px;
-    background-color:var(--red);
+    min-width: 150px;
+    background-color:rgba(229,9,20,.5);
+    /* color: var(--red); */
     font-size: 15px;
-    color: white;
     transition: background-color 0.25s;
+    cursor: pointer;
 }
 .button_row button:hover{
-    background-color: var(--black);
+    background-color: var(--red);
 }
+.info-square{
+    color:blueviolet
+}
+
+/* Movie Carousel */
+
+.movie_carousel_container{
+    margin: 15px;
+}
+
+.movie_carousel_container h3{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.movie_carousel_container img{
+    max-height: 300px;
+    /* max-width: 100px; */
+}
+/*
+.movie_carousel_container .owl-nav{
+    display: none;
+} */
+/* 
+.movie_carousel_container .owl-dots{
+    display: none;
+} */
