@@ -1,0 +1,61 @@
+:root{
+    --carousel_container_height: 400px;
+    --button_size: 30px;
+    --container_margin: calc(var(--button_size)/2);
+    --negative_container_margin: calc(-1*(var(--container_margin)));
+}
+
+
+/* Movie Carousel */
+
+.movie_carousel_container{
+    margin: var(--container_margin);
+}
+
+.movie_carousel_container h3{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.movie_carousel_container img{
+    max-height: var(--carousel_container_height);
+}
+
+.owl-nav-custom{
+    position: absolute;
+    width: 100%;
+    transform: translate(0, calc(-1* (var(--carousel_container_height) + var(--button_size))/2));
+    align-content: center;
+}
+
+.owl-prev-custom{
+    position: absolute;
+    transition: .5s;
+    font-size: 1.5em;
+    left: var(--negative_container_margin);
+    height: var(--button_size);
+    width: var(--button_size);
+    border-radius: 2em;
+    background-color: var(--red);
+    opacity: 0;
+}
+
+.movie_carousel_container:hover .owl-prev-custom{
+    opacity: 1;
+    left:0;
+}
+
+.owl-next-custom{
+    position: absolute;
+    transition: .5s;
+    font-size: 1.5em;
+    left:calc(100% - 20px);
+    height: var(--button_size);
+    width: var(--button_size);
+    border-radius: 2em;
+    background-color: var(--red);
+    opacity: 0;
+}
+
+.movie_carousel_container:hover .owl-next-custom{
+    opacity: 1;
+    left:calc(100% - var(--button_size));
+}
